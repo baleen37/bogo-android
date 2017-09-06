@@ -3,10 +3,10 @@ package com.crewbi.bogo.activity
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.webkit.WebChromeClient
 import android.webkit.WebView
 import com.crewbi.bogo.Constant
 import com.crewbi.bogo.R
+import com.crewbi.bogo.widget.webview.BogoWebChromeClient
 import com.crewbi.bogo.widget.webview.BogoWebViewClient
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -25,8 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         val webSettings = webview.settings
         webSettings.javaScriptEnabled = true
-        webview.webChromeClient = WebChromeClient()
-        var bogoWebviewClient = BogoWebViewClient()
+
+        val bogoWebChromeClient = BogoWebChromeClient()
+        webview.webChromeClient = bogoWebChromeClient
+        val bogoWebviewClient = BogoWebViewClient(context=this)
         webview.webViewClient = bogoWebviewClient
 
         swipeRefreshLayout.setOnRefreshListener {
