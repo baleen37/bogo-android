@@ -1,4 +1,4 @@
-package com.crewbi.bogo.widget.webview
+package com.crewbi.bogu.presenter.webview
 
 import android.content.Context
 import android.net.Uri
@@ -7,12 +7,13 @@ import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import com.crewbi.bogu.Constant
 
 
 /**
  * Created by baleen37@gmail.com on 06/09/2017.
  */
-class BogoWebViewClient(val context: Context) : WebViewClient() {
+class BoguWebViewClient(val context: Context) : WebViewClient() {
 
     interface OnLoadingListener {
         fun onFinished(view: WebView?)
@@ -22,7 +23,7 @@ class BogoWebViewClient(val context: Context) : WebViewClient() {
 
     override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
         val uri = Uri.parse(url)
-        if (uri.host.contains("bogo.crewib.com")) {
+        if (uri.host.contains(Constant.URL.BOGU_HOST)) {
             return true
         }
 

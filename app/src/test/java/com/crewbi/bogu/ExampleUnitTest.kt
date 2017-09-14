@@ -1,4 +1,4 @@
-package com.crewbi.bogo
+package com.crewbi.bogu
 
 import org.junit.Test
 

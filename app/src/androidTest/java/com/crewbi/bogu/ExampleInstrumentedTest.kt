@@ -1,4 +1,4 @@
-package com.crewbi.bogo
+package com.crewbi.bogu
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

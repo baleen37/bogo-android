@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "950533714698",
+    "firebase_url": "https://bogu-8b7ca.firebaseio.com",
+    "project_id": "bogu-8b7ca",
+    "storage_bucket": "bogu-8b7ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950533714698:android:fd6820ae996e0c99",
+        "android_client_info": {
+          "package_name": "com.crewbi.bogu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950533714698-hirkh8a6s4elocp20s52n3km28bjmk53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI8LR-Hoycj-axWfTzc_qH4ebam3zM0tM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

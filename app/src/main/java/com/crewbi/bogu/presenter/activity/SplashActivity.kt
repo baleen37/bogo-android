@@ -1,10 +1,10 @@
-package com.crewbi.bogo.activity
+package com.crewbi.bogu.presenter.activity
 
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
-import com.crewbi.bogo.Navigator
-import com.crewbi.bogo.R
+import com.crewbi.bogu.Navigator
+import com.crewbi.bogu.R
 
 class SplashActivity : AppCompatActivity() {
 

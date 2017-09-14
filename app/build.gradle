@@ -1,22 +1,24 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+
+kapt {
+    generateStubs = true
+}
 
 android {
     signingConfigs {
         release {
-            keyAlias 'bogo'
+            keyAlias 'bogu'
             keyPassword ''
-            storeFile file('bogo.key')
+            storeFile file('bogu.key')
             storePassword ''
         }
     }
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
-        applicationId "com.crewbi.bogo"
+        applicationId "com.crewbi.bogu"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
@@ -30,6 +32,13 @@ android {
             signingConfig signingConfigs.release
         }
     }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+ext {
+    daggerVersion = '2.10'
 }
 
 dependencies {
@@ -41,4 +50,27 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.android.support:customtabs:26.0.2'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-messaging:11.2.2'
+
+    // Retrofit
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile "com.squareup.okhttp3:logging-interceptor:3.6.0"
+
+    // Rx
+    implementation 'io.reactivex:rxjava:1.2.0'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    // Dagger
+    compile "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    provided 'javax.annotation:jsr250-api:1.0'
 }
+
+
+apply plugin: 'com.google.gms.google-services'
