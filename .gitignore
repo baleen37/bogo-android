@@ -22,12 +22,6 @@
 # Java class files
 *.class
 
-# Generated fileecho "# bogo-android" >> README.md
-                git init
-                git add README.md
-                git commit -m "first commit"
-                git remote add origin git@github.com:baleen37/bogo-android.git
-                git push -u origin masters
 bin/
 gen/
 out/
