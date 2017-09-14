@@ -7,12 +7,20 @@ kapt {
 }
 
 android {
+    def props = new Properties()
+    def propFile = new File('keystore.properties')
+    props.load(new FileInputStream(propFile))
+
     signingConfigs {
         release {
-            keyAlias 'bogu'
-            keyPassword ''
-            storeFile file('bogu.key')
-            storePassword ''
+            try {
+                storeFile file("bogu.key")
+                storePassword props['key.store.password']
+                keyAlias "bogu"
+                keyPassword props['key.alias.password']
+            } catch (MissingPropertyException e) {
+                assert "wrong release config : " + e
+            }
         }
     }
     compileSdkVersion 26
